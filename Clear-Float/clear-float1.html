@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>after + zoom</title>
+    <style type="text/css">
+        .div1 {
+            background: #000080;
+            border: 1px solid red;
+        }
+
+        .div2 {
+            background: #0edb0e;
+            border: 1px solid red;
+            height: 100px;
+            margin-top: 10px;
+        }
+
+        .div1, .div2, .left, .right{
+            color: #fff;
+            font-size: 2em;
+            text-align: center;
+        }
+
+        .left {
+            float: left;
+            width: 20%;
+            height: 200px;
+            background: rgb(64, 66, 190);
+        }
+
+        .right {
+            float: right;
+            width: 30%;
+            height: 80px;
+            background: rgb(202, 63, 207);
+        }
+
+        /*清除浮动代码*/
+        .clearfloat:after {
+            display: block;
+            clear: both; 
+            content: "";
+            visibility: hidden;
+            height: 0;
+        }
+
+        .clearfloat {
+            /* zoom这个属性是ie专有属性，(火狐不支持)
+             * 设置或者检索对象的缩放比例，
+             * 触发ie的haslayout属性，清除浮动，
+             * 清除margin重叠
+            **/
+            zoom: 1;
+            /* clear: both; */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 
+        after & zoom 清除浮动
+        IE8以上和非IE浏览器才支持:after，zoom(IE转有属性)可解决ie6,ie7浮动问题
+     -->
+    <div class="div1 clearfloat">
+        parent Div
+        <div class="left">Left</div>
+        <div class="right">Right</div>
+    </div>
+    <div class="div2">
+        div2
+    </div>
+</body>
+
+</html>

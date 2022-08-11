@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>父级 div 定宽 + 溢出隐藏</title>
+    <style type="text/css">
+        .div1 {
+            background: #000080;
+            border: 1px solid red;
+            width: 98%;
+            overflow: hidden;
+            /* overflow: auto; */
+        }
+
+        .div2 {
+            background: #0edb0e;
+            border: 1px solid red;
+            height: 100px;
+            margin-top: 10px;
+        }
+
+        .div1, .div2, .left, .right{
+            color: #fff;
+            font-size: 2em;
+            text-align: center;
+        }
+
+        .left {
+            float: left;
+            width: 20%;
+            height: 200px;
+            background: rgb(64, 66, 190);
+        }
+
+        .right {
+            float: right;
+            width: 30%;
+            height: 80px;
+            background: rgb(202, 63, 207);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="div1 parent">
+        parent Div
+        <div class="left">Left</div>
+        <div class="right">Right</div>
+    </div>
+    <div class="div2">
+        div2
+    </div>
+</body>
+
+</html>
